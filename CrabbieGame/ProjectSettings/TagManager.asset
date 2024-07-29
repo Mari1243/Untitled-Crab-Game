@@ -22,6 +22,7 @@ TagManager:
   - Spawn 3
   - Spawn4
   - CrabDie
+  - Lighthouse
   layers:
   - Default
   - TransparentFX

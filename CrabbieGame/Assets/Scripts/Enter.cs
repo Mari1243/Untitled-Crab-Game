@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Enter : MonoBehaviour
 {
     public GameObject block;
+    public GameObject Fade;
 
 
 
@@ -40,7 +42,10 @@ public class Enter : MonoBehaviour
 
 
 
-
+    void Awake()
+    {
+        Fade.SetActive(false);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -87,6 +92,7 @@ public class Enter : MonoBehaviour
     }
     void OnTriggerEnter(Collider player)
     {
+
         if (player.tag == "DiaOne" && hasFlashlight == false)
 
         {
@@ -143,6 +149,12 @@ public class Enter : MonoBehaviour
             spawnerFour.SetActive(true);
             
         }
+        else if(player.tag == "Lighthouse")
+        {
+            Fade.SetActive(true);
+            StartCoroutine(DelaySceneLoad("Main"));
+
+        }
 
 
 
@@ -173,5 +185,10 @@ public class Enter : MonoBehaviour
 
 
     }
- 
+    IEnumerator DelaySceneLoad(string scene)
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(scene);
+    }
+
 }
