@@ -9640,6 +9640,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ENVM
       objectReference: {fileID: 0}
+    - target: {fileID: 8992084093237613740, guid: cd1436784ce0dc942b2ea846b7c3a30a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992084093237613740, guid: cd1436784ce0dc942b2ea846b7c3a30a,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 9180399942450884496, guid: cd1436784ce0dc942b2ea846b7c3a30a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10550,6 +10560,37 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1394273823}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1409638248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1409638249}
+  m_Layer: 0
+  m_Name: TESTTT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1409638249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409638248}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 31.30747, y: -3.0145912, z: -4.978434}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1436796164
 GameObject:
   m_ObjectHideFlags: 0
@@ -15587,3 +15628,4 @@ SceneRoots:
   - {fileID: 2102562852}
   - {fileID: 124127466}
   - {fileID: 2067427501}
+  - {fileID: 1409638249}
