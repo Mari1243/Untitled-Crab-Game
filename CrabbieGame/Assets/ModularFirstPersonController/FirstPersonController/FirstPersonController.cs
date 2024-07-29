@@ -279,17 +279,17 @@ public class FirstPersonController : MonoBehaviour
                     shovelSwing = GameObject.Find("ShovelSwing").GetComponent<AudioSource>();
                     shovelSwing.Play();
                     anim = GameObject.FindGameObjectWithTag("Shovel").GetComponent<Animator>();
-                    anim.SetBool("Hit", true);
+                    anim.SetTrigger("HIT");
                     //isZoomed = true;
                 }
-                else if(Input.GetKeyUp(zoomKey))
+                /*else if(Input.GetKeyUp(zoomKey))
                 {
                     anim = GameObject.FindGameObjectWithTag("Shovel").GetComponent<Animator>();
                     shovelSwing = GameObject.Find("ShovelSwing").GetComponent<AudioSource>();
                     //shovelSwing.Play();
                     anim.SetBool("Hit", false);
                     //isZoomed = false;
-                }
+                }*/
             }
 
             // Lerps camera.fieldOfView to allow for a smooth transistion
