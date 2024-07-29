@@ -21,6 +21,8 @@ public class HoleSpawns : MonoBehaviour
     public GameObject holeThree;
     public GameObject holeFour;
 
+    public Health health;
+
 
 
     // Start is called before the first frame update
@@ -71,6 +73,7 @@ public class HoleSpawns : MonoBehaviour
             }
             else if (holeThree.activeInHierarchy)
             {
+                health.holesCovered++;
                 holeThree.SetActive(false);
                 holeFour.SetActive(true);
                

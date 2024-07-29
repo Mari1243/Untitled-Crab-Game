@@ -23,6 +23,7 @@ TagManager:
   - Spawn4
   - CrabDie
   - Lighthouse
+  - Holes
   layers:
   - Default
   - TransparentFX

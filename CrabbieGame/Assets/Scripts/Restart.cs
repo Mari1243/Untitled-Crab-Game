@@ -2,19 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Restart : MonoBehaviour
 {
     public GameObject Fade;
+    public TextMeshProUGUI holesText;
+    private int holes;
+    private int killCount;
 
     // Start is called before the first frame update
     void Awake()
     {
+        killCount = PlayerPrefs.GetInt("crabsKilled");
+        holes = PlayerPrefs.GetInt("holesCovered");
         Cursor.lockState = CursorLockMode.None;
     }
     void Start()
     {
         Fade.SetActive(false);
+        holesText.text = holes.ToString() + "/10 Holes Covered";
     }
 
     // Update is called once per frame

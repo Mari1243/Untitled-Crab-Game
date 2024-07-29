@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     public int killcount = 0;
 
     //health
+    public int holesCovered = 0;
     public int playerHealth = 100;
     public int damage = 5;
     public int lowHealth = 15;
@@ -30,10 +31,13 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         healthBar.value = playerHealth;
         killCount.text = killcount.ToString();
         if (healthBar.value == 0)
         {
+            PlayerPrefs.SetInt("crabsKilled", killcount);
+            PlayerPrefs.SetInt("holesCovered", holesCovered);
             StartCoroutine(DelaySceneLoad("Dead"));
         }
 
@@ -48,7 +52,7 @@ public class Health : MonoBehaviour
     }
     IEnumerator DelaySceneLoad(string scene)
     {
-        
+       
         yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene(scene);
     }
