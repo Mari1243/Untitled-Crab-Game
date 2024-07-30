@@ -8,6 +8,7 @@ public class Restart : MonoBehaviour
 {
     public GameObject Fade;
     public TextMeshProUGUI holesText;
+    public TextMeshProUGUI killsText;
     private int holes;
     private int killCount;
 
@@ -22,6 +23,7 @@ public class Restart : MonoBehaviour
     {
         Fade.SetActive(false);
         holesText.text = holes.ToString() + "/10 Holes Covered";
+        killsText.text = killCount.ToString() + " Crabs Killed";
     }
 
     // Update is called once per frame
