@@ -18,11 +18,13 @@ public class Health : MonoBehaviour
     public int lowHealth = 15;
     public Slider healthBar;
     public GameObject bloodLow;
+    public GameObject crabAttack;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        crabAttack.SetActive(false);
         bloodLow.SetActive(false);
         healthBar.maxValue = 100;
         healthBar.minValue = 0;
@@ -36,6 +38,7 @@ public class Health : MonoBehaviour
         killCount.text = killcount.ToString();
         if (healthBar.value == 0)
         {
+            crabAttack.SetActive(true);
             PlayerPrefs.SetInt("crabsKilled", killcount);
             PlayerPrefs.SetInt("holesCovered", holesCovered);
             StartCoroutine(DelaySceneLoad("Dead"));
@@ -53,7 +56,7 @@ public class Health : MonoBehaviour
     IEnumerator DelaySceneLoad(string scene)
     {
        
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(scene);
     }
 
