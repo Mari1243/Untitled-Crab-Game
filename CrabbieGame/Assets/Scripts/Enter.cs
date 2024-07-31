@@ -16,6 +16,7 @@ public class Enter : MonoBehaviour
     public GameObject spawner1;
     public GameObject spawner11;
     public GameObject spawner111;
+    public GameObject spawner1111;
     public GameObject spawner2;
     public GameObject spawner3;
     public GameObject spawner4;
@@ -65,6 +66,7 @@ public class Enter : MonoBehaviour
         spawner1.SetActive(false);
         spawner11.SetActive(false);
         spawner111.SetActive(false);
+        spawner1111.SetActive(false);
     
 }
 
@@ -87,6 +89,7 @@ public class Enter : MonoBehaviour
             spawner.SetActive(true);
             spawner1.SetActive(true); spawner11.SetActive(true);
             spawner111.SetActive(true);
+            spawner1111.SetActive(true);
             
         }
     }

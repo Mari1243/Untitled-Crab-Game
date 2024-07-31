@@ -51,9 +51,25 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
-        
-        FollowPlayer();
-       
+
+        if (canMove == true)
+        {
+            Vector3 pos = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            rb.MovePosition(pos);
+            transform.LookAt(target);
+        }
+
+        else if (dead == false)
+        {
+            Vector3 playerDirection = target.position - transform.position;
+            Vector3 oppositeDirection = transform.position - playerDirection;
+            Vector3 pos = Vector3.MoveTowards(transform.position, oppositeDirection, speed * Time.deltaTime);
+
+            rb.MovePosition(pos);
+            transform.LookAt(target);
+
+        }
+
     }
     void GameOver()
     {
@@ -136,8 +152,9 @@ public class Movement : MonoBehaviour
         canMove = false;
         yield return new WaitForSeconds(0.5f);
         blood.SetBool("Hit", false);
-        yield return new WaitForSeconds(1f);
-        crab.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        canMove = true;
+
 
     }
  
